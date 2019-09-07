@@ -1,10 +1,11 @@
-class CreateSingups < ActiveRecord::Migration
+class CreateSignups < ActiveRecord::Migration
   def change
-    create_table :singups do |t|
+    create_table :signups do |t|
       t.string :title, :null => false
       t.integer :schoolclass_id
       t.text :description
       t.text :description_html
+      t.string :signup_type
       t.string :image
       t.boolean :is_all_day, :null => false, :default => 0
       t.datetime :start_date

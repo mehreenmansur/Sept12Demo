@@ -1,0 +1,20 @@
+<h1>Signups</h1>
+
+<div class="col-md-12">
+  <%@signups.each do |signup| %>
+    <div class="col-md-3">
+      <div>
+        <div><img/></div>
+        <div><%= signup.title %></div>
+        <div>
+          <span><%= signup.start_date.strftime("%b %d, %I:%S%p") if signup.start_date.present? %></span>
+          <span><%= signup.end_date.strftime("%b %d, %I:%S%p") if signup.end_date.present? %></span>
+        </div>
+        <p>
+          <%= signup.description %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+

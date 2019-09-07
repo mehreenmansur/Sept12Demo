@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190906043231) do
+ActiveRecord::Schema.define(version: 20190906055937) do
 
   create_table "signup_items", force: :cascade do |t|
     t.string   "owner_type",        limit: 255,               null: false
@@ -28,6 +28,33 @@ ActiveRecord::Schema.define(version: 20190906043231) do
     t.datetime "end_time"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+  end
+
+  create_table "signups", force: :cascade do |t|
+    t.string   "title",                  limit: 255,                   null: false
+    t.integer  "schoolclass_id",         limit: 4
+    t.text     "description",            limit: 65535
+    t.text     "description_html",       limit: 65535
+    t.string   "signup_type",            limit: 255
+    t.string   "image",                  limit: 255
+    t.boolean  "is_all_day",                           default: false, null: false
+    t.datetime "start_date"
+    t.string   "start_time",             limit: 255
+    t.datetime "end_date"
+    t.string   "end_time",               limit: 255
+    t.boolean  "all_rsvp_required",                    default: true,  null: false
+    t.boolean  "is_open_signup",                       default: true,  null: false
+    t.boolean  "is_published",                         default: false, null: false
+    t.datetime "published_at"
+    t.boolean  "has_invite_sent",                      default: false, null: false
+    t.boolean  "send_reminders",                       default: true,  null: false
+    t.integer  "signedup_reminder_days", limit: 4,     default: -1,    null: false
+    t.boolean  "notify_on_signup",                     default: true,  null: false
+    t.boolean  "has_event",                            default: false, null: false
+    t.integer  "event_id",               limit: 4
+    t.integer  "user_id",                limit: 4
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
   create_table "singups", force: :cascade do |t|

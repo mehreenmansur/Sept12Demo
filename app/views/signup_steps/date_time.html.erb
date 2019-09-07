@@ -1,0 +1,20 @@
+<div class="col-md-6">
+  <%= form_for @signup, url: wizard_path do |f| %>
+    <h1>Date Time</h1>
+
+    <%= f.hidden_field :signup_id, :value => @signup.id %>
+    <div class="field">
+      <%= f.label 'Event start date' %>
+      <%= f.datetime_select :start_date %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Event end date' %>
+      <%= f.datetime_select :end_date %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Save and Continue' %>
+    </div>
+  <% end %>
+</div>

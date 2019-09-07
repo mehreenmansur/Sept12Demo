@@ -47,4 +47,7 @@ group :development do
   gem 'spring'
 end
 
+# User Authentication
 gem 'devise'
+# Multi steps form
+gem 'wicked'
