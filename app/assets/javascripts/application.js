@@ -12,6 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require cocoon
 //= require_tree .
+
+jQuery(document).ready(function($){
+    $(document).on('turbolinks:load', function () {
+        $('.btn-save-and-cont').on('click', function () {
+            $('form').submit();
+        });
+    });
+});

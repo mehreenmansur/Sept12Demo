@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   before_action :index_breadcrumb, only: %i[index new edit create]
   before_action :new_breadcrumb, only: %i[create]
   before_action :set_event,
-    only: %i[edit need_poeple_or_things need_things need_items update time_form preview_and_publish]
+    only: %i[edit need_poeple_or_things need_things need_items update time_form
+             preview_and_publish]
 
   def index
     # records = params[:per_page_records] || Event::ELEMENT_PER_PAGE[0]
