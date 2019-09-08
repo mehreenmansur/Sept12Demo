@@ -1,0 +1,30 @@
+= form_for(@event, url: event_path(@event, from: 'time_form'),
+                   html: { method: :patch, class: 'form' }) do |f|
+  .row
+    .form-group
+      = f.label 'Start Time'
+      = f.text_field :start_time, class: 'form-control'
+    .form-group
+      = f.label 'End Time'
+      = f.text_field :end_time, class: 'form-control'
+    .form-group
+      button.btn.btn-success.float-right type='submit' Update
+= link_to 'Go Back',  edit_event_path(@event, to: 'first_form')
+    / .col-sm-3.col-md-4
+    /   fieldset.form-group
+    /     = label_tag 'Start Time'
+    /     span.req-field *
+    /     #datetimepicker1.input-group.date data-target-input="nearest"
+    /       input.form-control.datetimepicker-input data-target="#datetimepicker1" name="event[start_time]" required="true" type="text" value="#{@event.start_time}"/
+    /       .input-group-append data-target="#datetimepicker1" data-toggle="datetimepicker"
+    /         .input-group-text
+    /           i.fa.fa-calendar
+    / .col-sm-3.col-md-4
+    /   fieldset.form-group
+    /     = label_tag 'End Time'
+    /     span.req-field *
+    /     #datetimepicker2.input-group.date data-target-input="nearest"
+    /       input.form-control.datetimepicker-input data-target="#datetimepicker2" name="event[end_time]" required="true" type="text" value="#{@event.end_time}"/
+    /       .input-group-append data-target="#datetimepicker2" data-toggle="datetimepicker"
+    /         .input-group-text
+    /           i.fa.fa-calendar

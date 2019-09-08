@@ -13,3 +13,6 @@
 /tmp
 /.idea
 /vendor/ruby
+/vendor/cache
+/vendor/*
+.ru

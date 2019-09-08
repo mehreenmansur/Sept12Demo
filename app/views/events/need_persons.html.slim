@@ -1,0 +1,12 @@
+= form_for(@event, url: event_path(@event, from: 'need_persons'),
+        html: {method: :patch}) do |f|
+  #event_properties
+    = f.fields_for :persons do |prop|
+      = render partial: 'events/person_fields', locals: { f: prop }
+    .links
+      .col-xs-10.col-xs-offset-2
+        = link_to_add_association 'Add persons', f, :persons, class: 'btn btn-success btn-xs'
+  .form-group.row
+    .col-xs-10.col-xs-offset-2
+      = f.submit 'Submit', class: 'btn btn-primary'
+= link_to 'Go Back', event_need_poeple_or_things_path(event_id: @event)
