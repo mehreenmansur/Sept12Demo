@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+
+  resources :events do
+    get :time_form
+    get :need_items
+    get :need_things
+    get :need_poeple_or_things
+    get :preview_and_publish
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'homes#dashboard'
+  # root 'homes#dashboard'
+  root 'signups#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -13,7 +23,14 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :signups
+    resources :signups do
+      get :time_form
+      get :need_items
+      get :need_things
+      get :need_poeple_or_things
+      get :preview_and_publish
+    end
+
     resources :signup_steps
 
   # Example resource route with options:

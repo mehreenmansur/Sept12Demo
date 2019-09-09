@@ -43,3 +43,5 @@ public/assets
 coverage
 
 Dump20171024.sql
+
+/vendor/*

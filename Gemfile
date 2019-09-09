@@ -24,7 +24,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'slim-rails'
+gem 'bootstrap-sass', '~> 3.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'cocoon', '~> 1.2', '>= 1.2.10'
+gem 'momentjs-rails', '>= 2.9.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

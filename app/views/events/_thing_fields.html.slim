@@ -1,0 +1,12 @@
+.row.nested-fields.form-group.required
+  div.col-sm-12.col-sm-offset-2
+    span.field.col-sm-4
+      = f.label :name, 'Item name'
+      = f.text_field :name, class: 'form-control'
+    span.field.col-sm-4
+      = f.label :amount, 'How many?'
+      = f.text_field :amount, class: 'form-control'
+
+      /span.field.col-xs-2
+        /  div &nbsp
+        / = link_to_remove_association 'Remove Things', f, class: 'btn btn-danger btn-primary thing-remove-btn'
