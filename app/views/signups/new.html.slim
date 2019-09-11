@@ -6,7 +6,7 @@ div.row
       .card-body
         / = errors_for(@signup)
         = form_for(@signup, url: signups_path(from: 'first_form'),
-                   html: { method: :pokst, class: 'form' }) do |f|
+                   html: { method: :post, class: 'form' }) do |f|
           .form-group
             = f.label 'Signup Title'
             = f.text_field :title, class: 'form-control'
