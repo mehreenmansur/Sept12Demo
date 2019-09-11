@@ -10,16 +10,22 @@ div.row
           = link_to_add_association "Add #{@item_type}", f, :items,
              class: 'btn btn-success btn-xs'
 
-- if @item_type == 'people'
-  .text-right.padding-right
-    = link_to 'I need things',
-            signup_need_things_path(@signup, to: 'first_form', from: 'things'),
-            class: 'btn btn-primary btn-lg'
-- else
-  .text-right.padding-right
-    = link_to 'I need people',
-             signup_need_things_path(@signup, to: 'first_form', from: 'people'),
-             class: 'btn btn-primary btn-lg'
+    = hidden_field_tag "form_type"
+    - if @item_type == 'people'
+      .text-right.padding-right
+        | I need things &nbsp;&nbsp;
+        button.btn.btn-primary.btn-lg.btn-need-things
+        / button.btn.btn-default.btn-lg.button-round.btn-save-and-cont >
+        / = link_to 'I need things',
+        /         signup_need_things_path(@signup, to: 'first_form', from: 'things'),
+        /         class: 'btn btn-primary btn-lg'
+    - else
+      .text-right.padding-right
+        | I need things &nbsp;&nbsp;
+        button.btn.btn-primary.btn-lg.btn-need-people
+        / = link_to 'I need people',
+        /          signup_need_things_path(@signup, to: 'first_form', from: 'people'),
+        /          class: 'btn btn-primary btn-lg'
 hr
 div.col-sm-12
   div.row

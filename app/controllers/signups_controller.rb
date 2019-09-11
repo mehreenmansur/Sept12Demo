@@ -39,9 +39,11 @@ class SignupsController < ApplicationController
     if @signup.update_attributes(signup_params)
       if params[:from] == 'time_form'
         redirect_to signup_need_poeple_or_things_path(signup_id: @signup)
-      elsif params[:from] == 'need_things'
-        redirect_to  signup_preview_and_publish_path(signup_id: @signup)
-      elsif params[:from] == 'need_items'
+      elsif params[:form_type] == 'people'
+        redirect_to signup_need_things_path(signup_id: @signup)
+      elsif params[:form_type] == 'things'
+        redirect_to signup_need_things_path(signup_id: @signup)
+      elsif params[:form_type] == 'save'
         redirect_to signup_preview_and_publish_path(signup_id: @signup)
       end
       # redirect_to edit_event_path(@event)
